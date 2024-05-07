@@ -22,7 +22,8 @@ function AuthorProfile() {
 
                 //todo: refactor this to make the api url a config variable
                 axios.defaults.headers.get['Content-Type'] = 'application/json';
-                const response = await axios.get(`https://s9x201dz-5000.use.devtunnels.ms/users/${userId}`, {
+                console.log("api key", import.meta.env.VITE_APP_DYNAMIC_API_KEY);
+                const response = await axios.get(`https://lthz20bp-5000.usw3.devtunnels.ms/users/${userId}`, {
                     headers: {
                         Authorization: `Bearer ${import.meta.env.VITE_APP_DYNAMIC_API_KEY}`
                     },
@@ -34,6 +35,8 @@ function AuthorProfile() {
                     }
                 });
                 setAuthor(response.data);
+                console.log('response.data:', response.data);
+                console.log('author:', author);
             } catch (error) {
                 console.error('Failed to fetch author:', error);
             }

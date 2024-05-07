@@ -53,12 +53,13 @@ function AuthorInfo({author, iscurrentuser }) {
               </a>
             </div>
           </div>
-          <button
+          {iscurrentuser ? (<button
             className="bg-black hover:bg-gray-700 text-white font-bold py-2 px-3 mt-12 rounded text-medium"
             style={{ whiteSpace: "nowrap" }}
           >
             Edit profile
-          </button>
+          </button>)
+          : (<></>)}
         </div>
       </div>
       {/* <p>author.bioauthor.bio</p> */}
